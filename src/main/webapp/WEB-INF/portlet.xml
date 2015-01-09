@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" 
+              version="2.0" 
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd">
+
+    <portlet>
+        <description>This is a test.</description>
+        <portlet-name>myportlet</portlet-name>
+        <display-name>MyPortlet Portlet</display-name>
+        <portlet-class>org.apache.portals.tutorials.MyPortlet</portlet-class>
+        <init-param>
+            <name>ViewPage</name>
+            <value>/WEB-INF/normal.jsp</value>
+        </init-param>
+        <supports>
+            <mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+			<portlet-mode>EDIT</portlet-mode>
+			<portlet-mode>HELP</portlet-mode>
+        </supports>
+        <supported-locale>en</supported-locale>
+        <portlet-info>
+            <title>My Portlet</title>
+            <short-title>My Portlet</short-title>
+            <keywords>test</keywords>
+        </portlet-info>
+    </portlet>
+
+</portlet-app>
