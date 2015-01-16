@@ -6,11 +6,9 @@
     
     <!-- For deploying on Websphere: disable WebSphere default portletcontainer
          However: if you actually want to deploy on WebSphere Portal, comment the following out -->
-    <!--  i think i comment this out below
     <context-param>
         <param-name>com.ibm.websphere.portletcontainer.PortletDeploymentEnabled</param-name>
         <param-value>false</param-value>
     </context-param>
-    -->
     
 </web-app>
