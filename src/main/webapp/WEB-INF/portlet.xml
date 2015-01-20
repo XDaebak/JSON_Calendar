@@ -6,10 +6,10 @@
               xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd">
 
     <portlet>
-        <description>This is a test.</description>
-        <portlet-name>bjj</portlet-name>
-        <display-name>BJJ </display-name>
-        <portlet-class>org.example.MyPortlet</portlet-class>
+        <description>This is a test editable portlet</description>
+        <portlet-name>editable-portlet</portlet-name>
+        <display-name>My Editable Portlet</display-name>
+        <portlet-class>org.oit.MyPortlet</portlet-class>
         <init-param>
             <name>ViewPage</name>
             <value>/WEB-INF/normal.jsp</value>
@@ -17,14 +17,14 @@
         <supports>
             <mime-type>text/html</mime-type>
             <portlet-mode>VIEW</portlet-mode>
-			<portlet-mode>EDIT</portlet-mode>
-			<portlet-mode>HELP</portlet-mode>
+            <portlet-mode>EDIT</portlet-mode>
+            <portlet-mode>HELP</portlet-mode>
         </supports>
         <supported-locale>en</supported-locale>
         <portlet-info>
-            <title>Brazilian Jiu Jitsu</title>
-            <short-title>BJJ</short-title>
-            <keywords>test</keywords>
+            <title>My Editable Portlet</title>
+            <short-title>My Editable Portlet</short-title>
+            <keywords>editable</keywords>
         </portlet-info>
     </portlet>
 
