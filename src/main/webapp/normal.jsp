@@ -1,20 +1,20 @@
-<script type="text/javascript" src="C:\OITDevEnv\Files\tinymce\js\tinymce\tinymce.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>\resources\js\tinymce.min.js"></script>
 <script type="text/javascript">
 tinymce.init({
-/*
+
     selector: "textarea",
 	theme: "modern",    // default
 	skin: "lightgray",  // default
-	width: 1000,
-	height: 1000,
+	//width: 1000,
+	//height: 1000,
 	browser_spellcheck: true,  
-	object_resizing: "img"    
+	object_resizing: "img",    
 	toolbar: [
 		"undo redo | styleselect | bold italic | link image",
 		"alignleft aligncenter alignright"
 	],
-*/
 
+/*
 	selector : "content",
     theme : "advanced",
     theme_advanced_buttons1 : "mybutton,bold,italic,underline,separator,strikethrough,justifyleft,justifycenter,justifyright, justifyfull,bullist,numlist,undo,redo,link,unlink",
@@ -35,7 +35,7 @@ tinymce.init({
                 ed.selection.setContent("Brazilian Jiu Jitsu");
             }
         });
-    }	
+    }	*/
  });
 </script>
 
