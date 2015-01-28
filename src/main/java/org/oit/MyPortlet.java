@@ -26,14 +26,20 @@ public class MyPortlet extends GenericPortlet {
     private PortletRequestDispatcher helpDispatcher;
 	private PortletRequestDispatcher editDispatcher;
 	
-
+	@Override
     public void doView(RenderRequest request, RenderResponse response)
         throws PortletException, IOException 
 	{
+    	PortletPreferences prefs = request.getPreferences();
+    	String content = prefs.getValue("content", "Click edit to edit content."); 
+    	prefs.setValue("content", content);  
+    	
+    	request.setAttribute("content", content);
+    	request.setAttribute("mode", request.getPortletMode());
 
         if (WindowState.MINIMIZED.equals(request.getWindowState())) 
 		{
-            return;
+            return; // Don't do anything because minimized does not need JSP
         }
 
         if (WindowState.NORMAL.equals(request.getWindowState())) 
@@ -46,23 +52,35 @@ public class MyPortlet extends GenericPortlet {
             maximizedDispatcher.include(request, response);
         }
     }
-
+	
+	@Override
     protected void doHelp(RenderRequest request, RenderResponse response)
         throws PortletException, IOException 
 	{
         helpDispatcher.include(request, response);
     }
 	
+	@Override
 	protected void doEdit(RenderRequest request, RenderResponse response)
 		throws PortletException, IOException
 	{
+		PortletPreferences prefs = request.getPreferences();
+		String content = prefs.getValue("content", "Edit content and click submit. Will add cancel button later");
+		request.setAttribute("content", content);
+		request.setAttribute("mode", request.getPortletMode());
+		request.setAttribute("actionURL", response.createActionURL());
+		
 		editDispatcher.include(request, response);
 	}
 	
+	@Override
 	public void processAction(ActionRequest request, ActionResponse response) 
 		throws PortletException, IOException 
 	{
-		// do shit
+		String content = request.getParameter("content");
+		PortletPreferences prefs = request.getPreferences();
+		prefs.setValue("content", content);
+		prefs.store();
 		response.setPortletMode(PortletMode.VIEW);
 	}
 

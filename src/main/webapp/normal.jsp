@@ -1,48 +1,10 @@
-<script type="text/javascript" src="<%=request.getContextPath()%>\resources\js\tinymce.min.js"></script>
-<script type="text/javascript">
-tinymce.init({
+<%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
+<portlet:defineObjects/> 
 
-    selector: "textarea",
-	theme: "modern",    // default
-	skin: "lightgray",  // default
-	//width: 1000,
-	//height: 1000,
-	browser_spellcheck: true,  
-	object_resizing: "img",    
-	toolbar: [
-		"undo redo | styleselect | bold italic | link image",
-		"alignleft aligncenter alignright"
-	],
+<portlet:renderURL portletMode="edit" var="editURL"/>
+<portlet:renderURL portletMode="help" var="helpURL"/>
 
-/*
-	selector : "content",
-    theme : "advanced",
-    theme_advanced_buttons1 : "mybutton,bold,italic,underline,separator,strikethrough,justifyleft,justifycenter,justifyright, justifyfull,bullist,numlist,undo,redo,link,unlink",
-    theme_advanced_buttons2 : "",
-    theme_advanced_buttons3 : "",
-    theme_advanced_toolbar_location : "top",
-    theme_advanced_toolbar_align : "left",
-    theme_advanced_statusbar_location : "bottom",
-    plugins : 'inlinepopups',
-    setup : function(ed) {
-        // Add a custom button   
-        ed.addButton('mybutton', {
-            title : 'My button',
-            image : 'img/example.gif',
-            onclick : function() {
-                // Add you own code to execute something on click
-                ed.focus();
-                ed.selection.setContent("Brazilian Jiu Jitsu");
-            }
-        });
-    }	*/
- });
-</script>
-
-<!-- Need to add some renderURL's for this -->
-
-<form method="post">  <!-- action="someurl" -->
-    <textarea name="content" style="width:100%">
-	Brazilian Jiu Jitsu + Judo Randori sounds very fun. 
-	</textarea>
-</form>
+<p>Current Mode is right now ${mode}</p>
+<p>Content: ${content}</p>
+<p>Click <a href=${editURL}>Edit</a> to edit</p>
+<p>Need help? Click <a href=${helpURL}>here.</a></p>
