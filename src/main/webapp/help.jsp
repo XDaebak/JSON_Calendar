@@ -1,1 +1,1 @@
-<h4>No Help For You! I LOOOOOOOOVE JIU JITSUUUUUUUU</h4>
+<h4>No Help For You! To go back to normal view, click the appropriate button above ^</h4>

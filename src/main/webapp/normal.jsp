@@ -4,7 +4,6 @@
 <portlet:renderURL portletMode="edit" var="editURL"/>
 <portlet:renderURL portletMode="help" var="helpURL"/>
 
-<p>Current Mode is right now ${mode}</p>
-<p>Content: ${content}</p>
-<p>Click <a href=${editURL}>Edit</a> to edit</p>
+<p>${content}</p>
+<p>This button will probably be restricted to the admins. <a href=${editURL}>Edit</a></p>
 <p>Need help? Click <a href=${helpURL}>here.</a></p>
