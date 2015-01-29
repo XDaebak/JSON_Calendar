@@ -13,7 +13,7 @@ tinymce.init({
 		"undo redo | styleselect | bold italic | link image",
 		"alignleft aligncenter alignright"
 	]
- });
+});
 </script>
 
 <form method="post" action=${actionURL}>  
