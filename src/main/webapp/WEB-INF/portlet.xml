@@ -6,9 +6,9 @@
               xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd">
 
     <portlet>
-        <description>This is a test editable portlet</description>
-        <portlet-name>editable-portlet</portlet-name>
-        <display-name>My Editable Portlet</display-name>
+        <description>Experimenting with Google Calendar in Portlet</description>
+        <portlet-name>gcal-portlet</portlet-name>
+        <display-name>Google Calendar Portlet</display-name>
         <portlet-class>org.oit.MyPortlet</portlet-class>
         <init-param>
             <name>ViewPage</name>
@@ -22,9 +22,9 @@
         </supports>
         <supported-locale>en</supported-locale>
         <portlet-info>
-            <title>My Editable Portlet</title>
-            <short-title>My Editable Portlet</short-title>
-            <keywords>editable</keywords>
+            <title>Google Calendar Portlet</title>
+            <short-title>GCal Portlet</short-title>
+            <keywords>gcal</keywords>
         </portlet-info>
     </portlet>
 
