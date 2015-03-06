@@ -107,7 +107,7 @@ public class MyPortlet extends GenericPortlet {
 	public void setUp() throws IOException, GeneralSecurityException 
 	{
 	    HttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
-	    JacksonFactory jsonFactory = JacksonFactory.getDefaultInstance();
+	    JacksonFactory jsonFactory = JacksonFactory.getDefaultInstance();// = JacksonFactory.getDefaultInstance();
 
 	    // The clientId and clientSecret can be found in Google Developers Console
 	    String clientId = "925906760721-5uvjeol6g2g1ftkr2eeek595hd5u3ut4.apps.googleusercontent.com";

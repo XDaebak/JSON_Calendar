@@ -98,6 +98,7 @@
 	      <version>v3-rev118-1.19.1</version>
     	</dependency>
 
+
 		<!-- Portals Bridges Common provides the GenericServletPortlet -->
 		<dependency>
 			<artifactId>portals-bridges-common</artifactId>
