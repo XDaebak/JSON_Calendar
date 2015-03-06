@@ -46,6 +46,57 @@
 			<artifactId>geronimo-servlet_2.4_spec</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		
+		<dependency>
+		  <groupId>com.google.api-client</groupId>
+		  <artifactId>google-api-client</artifactId>
+		  <version>1.18.0-rc</version>
+		</dependency>
+		<dependency>
+		  <groupId>com.google.http-client</groupId>
+		  <artifactId>google-http-client-jackson2</artifactId>
+		  <version>1.15.0-rc</version>
+		</dependency> 
+		<dependency>
+		  <groupId>com.google.api-client</groupId>
+		  <artifactId>google-api-client-servlet</artifactId>
+		  <version>1.18.0-rc</version>
+		</dependency>
+		<dependency>
+		  <groupId>com.google.api-client</groupId>
+		  <artifactId>google-api-client-appengine</artifactId>
+		  <version>1.18.0-rc</version>
+		</dependency>
+		<dependency>
+		  <groupId>com.google.api-client</groupId>
+		  <artifactId>google-api-client-gson</artifactId>
+		  <version>1.18.0-rc</version>
+		</dependency>
+		<dependency>
+		  <groupId>com.google.api-client</groupId>
+		  <artifactId>google-api-client-jackson2</artifactId>
+		  <version>1.18.0-rc</version>
+		</dependency>
+		<dependency>
+		  <groupId>com.google.api-client</groupId>
+		  <artifactId>google-api-client-java6</artifactId>
+		  <version>1.18.0-rc</version>
+		</dependency>
+		<dependency>
+		  <groupId>com.google.api-client</groupId>
+		  <artifactId>google-api-client-protobuf</artifactId>
+		  <version>1.18.0-rc</version>
+		</dependency>
+		<dependency>
+		  <groupId>com.google.api-client</groupId>
+		  <artifactId>google-api-client-xml</artifactId>
+		  <version>1.18.0-rc</version>
+		</dependency>
+		<dependency>
+	      <groupId>com.google.apis</groupId>
+	      <artifactId>google-api-services-calendar</artifactId>
+	      <version>v3-rev118-1.19.1</version>
+    	</dependency>
 
 		<!-- Portals Bridges Common provides the GenericServletPortlet -->
 		<dependency>
