@@ -1,40 +1,35 @@
 package org.oit;
 
-import java.io.IOException;              		
-import javax.portlet.PortletConfig;      		
-import javax.portlet.GenericPortlet;     		
-import javax.portlet.PortletException;   		
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.security.GeneralSecurityException;
+import java.util.Collections;
+
+import javax.portlet.ActionRequest;
+import javax.portlet.ActionResponse;
+import javax.portlet.GenericPortlet;
+import javax.portlet.PortletConfig;
+import javax.portlet.PortletException;
 import javax.portlet.PortletMode;
-import javax.portlet.PortletPreferences; 		
-import javax.portlet.PortletRequestDispatcher;  
-import javax.portlet.PortletSession;
-import javax.portlet.RenderRequest;             
-import javax.portlet.RenderResponse;            
-import javax.portlet.ActionRequest;             
-import javax.portlet.ActionResponse;            
+import javax.portlet.PortletRequestDispatcher;
+import javax.portlet.RenderRequest;
+import javax.portlet.RenderResponse;
 import javax.portlet.WindowState;
-import com.google.api.client.http.HttpTransport;
-import com.google.api.client.http.javanet.NetHttpTransport;
-//import com.google.api.client.json.jackson.JacksonFactory;  // maven can't find this for some reason... 
-import com.google.api.services.calendar.Calendar;
-import com.google.api.services.calendar.model.*;
 
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.auth.oauth2.GoogleTokenResponse;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
-//import com.google.api.client.http.HttpTransport; // repeated
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
-//import com.google.api.services.calendar.Calendar;  // repeated
+import com.google.api.services.calendar.Calendar;
+import com.google.api.services.calendar.Calendar.*;
 
-import java.io.BufferedReader;
-//import java.io.IOException;
-import java.io.InputStreamReader;
-import java.security.GeneralSecurityException;
-import java.util.Collections;
-
-public class MyPortlet extends GenericPortlet {
+public class MyPortlet extends GenericPortlet 
+{
 
     private static final String NORMAL_VIEW = "/normal.jsp";
     private static final String MAXIMIZED_VIEW = "/maximized.jsp";
@@ -106,8 +101,9 @@ public class MyPortlet extends GenericPortlet {
 	
 	public void setUp() throws IOException, GeneralSecurityException 
 	{
-	    HttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
-	    JacksonFactory jsonFactory = JacksonFactory.getDefaultInstance();// = JacksonFactory.getDefaultInstance();
+	 	   
+		HttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
+	    JsonFactory jsonFactory = JacksonFactory.getDefaultInstance();
 
 	    // The clientId and clientSecret can be found in Google Developers Console
 	    String clientId = "925906760721-5uvjeol6g2g1ftkr2eeek595hd5u3ut4.apps.googleusercontent.com";
@@ -145,6 +141,8 @@ public class MyPortlet extends GenericPortlet {
 
 	    Calendar service = new Calendar.Builder(httpTransport, jsonFactory, credential)
 	        .setApplicationName("GoogleCalendar").build();
+	    
+	    CalendarList clist = service.calendarList();
 	}
 
     public void init(PortletConfig config) throws PortletException 
