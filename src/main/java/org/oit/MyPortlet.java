@@ -24,7 +24,8 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleTokenResponse;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.JsonFactory;
-import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.client.json.jackson2.*;
+
 import com.google.api.services.calendar.Calendar;
 import com.google.api.services.calendar.Calendar.*;
 
@@ -99,9 +100,9 @@ public class MyPortlet extends GenericPortlet
 		response.setPortletMode(PortletMode.VIEW);
 	}
 	
-	public void setUp() throws IOException, GeneralSecurityException 
+	public void setUp() 
+		throws IOException, GeneralSecurityException 
 	{
-	 	   
 		HttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
 	    JsonFactory jsonFactory = JacksonFactory.getDefaultInstance();
 
@@ -152,6 +153,15 @@ public class MyPortlet extends GenericPortlet
         maximizedDispatcher = config.getPortletContext().getRequestDispatcher(MAXIMIZED_VIEW);
         helpDispatcher = config.getPortletContext().getRequestDispatcher(HELP_VIEW);
 		editDispatcher = config.getPortletContext().getRequestDispatcher(EDIT_MODE);
+		try {
+			setUp();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (GeneralSecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
     public void destroy() 

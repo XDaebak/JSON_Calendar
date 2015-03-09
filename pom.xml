@@ -33,6 +33,12 @@
 			<artifactId>google-http-client-jackson2</artifactId>
 			<version>1.19.0</version>
 		</dependency>
+		<dependency>   <!--  may need this for Jackson 2 to work -->
+			<groupId>com.google.oauth-client</groupId>
+			<artifactId>google-oauth-client-java7</artifactId>
+			<version>1.16.0-rc</version>
+		</dependency>
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
