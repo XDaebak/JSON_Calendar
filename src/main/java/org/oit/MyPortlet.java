@@ -23,8 +23,9 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.auth.oauth2.GoogleTokenResponse;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.http.HttpTransport;
-import com.google.api.client.json.JsonFactory;
-import com.google.api.client.json.jackson2.*;
+//import com.google.api.client.json.JsonFactory;
+import com.google.api.client.json.jackson2.JacksonFactory;
+//import com.google.api.client.json.jackson2.*;
 
 import com.google.api.services.calendar.Calendar;
 import com.google.api.services.calendar.Calendar.*;
@@ -104,7 +105,7 @@ public class MyPortlet extends GenericPortlet
 		throws IOException, GeneralSecurityException 
 	{
 		HttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
-	    JsonFactory jsonFactory = JacksonFactory.getDefaultInstance();
+	    JacksonFactory jsonFactory = JacksonFactory.getDefaultInstance();
 
 	    // The clientId and clientSecret can be found in Google Developers Console
 	    String clientId = "925906760721-5uvjeol6g2g1ftkr2eeek595hd5u3ut4.apps.googleusercontent.com";
@@ -160,6 +161,8 @@ public class MyPortlet extends GenericPortlet
 			e.printStackTrace();
 		} catch (GeneralSecurityException e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
     }
