@@ -1,4 +1,4 @@
-# Google Calendar Portlet
+# JSON-and-other-Javascript-stuff Calendar Portlet
 
 This Google Calendar Portlet uses the Google Calendar API to display a calendar for the campus organizations, clubs, and other events
 
