@@ -20,7 +20,7 @@ import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 import javax.portlet.WindowState;
 
-import org.json.*;
+// import org.json.*;
 
 public class MyPortlet extends GenericPortlet {
 
